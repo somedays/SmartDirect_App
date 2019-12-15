@@ -1,0 +1,567 @@
+<html>
+
+<head>
+    <title>스마트다이렉트카</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/owl.theme.default.css">
+    <!-- header common component -->
+    <script type="text/javascript" src="resources/js/js-loader.js"></script><!-- Script -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jquery.loading-indicator -->
+    <script type="text/javascript" src="resources/js/jquery.loading-indicator/jquery.loading-indicator.min.js"></script><!-- NAVER LOGIN SDK -->
+    <script type="text/javascript" src="resources/js/naverLogin_implicit-1.0.3.js"></script><!-- KAKAO TALK -->
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script><!-- jquery.validate.min.js -->
+    <script type="text/javascript" src="resources/js/jquery-validate/jquery.validate.min.js"></script><!-- jquery.mask -->
+    <script type="text/javascript" src="resources/js/jquery.mask/jquery.mask.min.js"></script><!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+    <style type="text/css">
+    body.imp-payment-progress {
+        position: static
+    }
+
+    body.imp-payment-progress> :not(.imp-dialog) {
+        display: none
+    }
+
+    .imp-dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+    }
+
+    .imp-dialog .imp-frame-pc.imp-frame-danal,
+    .imp-dialog .imp-frame-pc.imp-frame-danal_tpay {
+        left: 50% !important;
+        margin-left: -345px;
+        width: 720px !important;
+        height: 700px !important;
+        margin-top: 50px;
+    }
+
+    .imp-dialog .imp-frame-pc.imp-frame-mobilians {
+        left: 50% !important;
+        margin-left: -410px;
+        width: 820px !important;
+        height: 700px !important;
+        margin-top: 50px;
+    }
+
+    .imp-dialog .imp-header {
+        display: none;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 25px;
+    }
+
+    .imp-dialog .imp-close {
+        text-decoration: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAV1JREFUOBHNkz1Ow0AQhWMHioggUSFEyRGAggp6KqDhDHAFOioU/loQoqDlGhyAgmtQ0gEO31jz1iPbcZyOlUY7fvvem9mdZDD472vY0mDegrVBGaBF54qELuPYSNQkc4FjkHNCAu2JSLLkHxvsZ+Gg9FAXUw4M+CI+8zy/cuIvezQ1sx9iDOeS/YOwZT7m0VgqcITgOpwars5WOXvke9vPY8EgqVIJTxDeVXCZWWdPZLuOL9fOZ35G03tnjbyznS4zDaPNWe91iNE+hGlRFK/s74R19k0stNJ1six7w/QlqPXWAepOdWUbwDPULeKAPL7p3GGohMzqA7DzY0xvRWSfayrCCsIHBHGaKmTTr/+kQo0q1busuZl+Z+ktocrUOr2ppM3/tKY9hDiBuOfkaCa9TE8BLhyUXpxUYQSy7qiun0gh0W02wWbyYhUJgkcj7cMpRb2JsBfhNjrqBfwBsGIgzBGH3EgAAAAASUVORK5CYII=');
+    }
+
+    .imp-dialog.pc .imp-frame-danal-certification {
+        width: 410px !important;
+        height: 660px !important;
+        margin: 10px auto;
+        background: #fff;
+    }
+
+    .imp-dialog.pc.certification-danal {
+        background: rgb(255, 255, 255);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .imp-dialog.pc.certification-danal .imp-header {
+        display: block;
+        width: 410px;
+        margin: 0 auto;
+    }
+
+    .imp-dialog.pc.certification-danal .imp-header .imp-close {
+        top: 18px;
+        right: 25px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .imp-dialog.mobile.ios {
+        position: absolute;
+    }
+
+    .imp-dialog.mobile.certification-danal .imp-header {
+        display: block;
+    }
+
+    .imp-dialog.mobile.certification-danal .imp-header .imp-close {
+        top: 6px;
+        right: 10px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .imp-dialog.pc.payment-settle_firm {
+        background: rgb(221, 221, 221);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .imp-dialog.pc .imp-frame-settle_firm {
+        width: 410px !important;
+        height: 700px !important;
+        margin: 10px auto;
+        background: #fff;
+    }
+
+    .imp-dialog.pc.payment-kakaopay {
+        background: rgb(221, 221, 221);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .imp-dialog.pc.payment-kakaopay .imp-frame-kakaopay {
+        width: 426px !important;
+        height: 550px !important;
+        left: 50% !important;
+        top: 50% !important;
+        margin-left: -213px !important;
+        margin-top: -275px !important;
+    }
+    </style><!-- common js -->
+    <script type="text/javascript" src="resources/js/common.js"></script>
+</head>
+
+<body>
+    <!-- header common component -->
+    <script type="text/javascript" src="resources/menu/header.js"></script>
+    <header id="header">
+        <h1><a href="login.html"><img src="resources/img/smart-logo.svg"></a></h1>
+        <div class="header-btns left"> <a href="javascript:history.back(-1);" class="hbtn"><i class="i-chevron-left"></i></a> </div>
+        <div class="header-btns right"> <a href="#" class="hbtn menu" onclick="$('#sidemenu').addClass('on')"><i class="i-menu"></i></a> </div>
+    </header>
+    <!-- sidemenu common component -->
+    <script type="text/javascript" src="resources/menu/sidemenu.js"></script>
+    <div id="sidemenu">
+        <div class="side-header">
+            <div class="login-info after on"><span>오정호</span>님 환영합니다. <a href="javascript:APP.doLogOut();">로그아웃</a></div> <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+        </div>
+        <ul>
+            <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+            <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+            <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 &amp; 핫딜</span></li>
+            <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+            <li><i class="i-message-circle"></i> <span>Q&amp;A</span></li>
+            <h3><span>마이페이지</span></h3>
+            <li onclick="location.href='mypage_mycar.html'"><i class="i-archive1"></i> <span>나의 견적함</span></li>
+            <li onclick="location.href='mypage_myquotation.html'"><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+        </ul>
+    </div>
+    <!-- bottom common component -->
+    <script type="text/javascript" src="resources/menu/bottomnav.js"></script>
+    <div class="bottom-nav">
+        <ul>
+            <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+            <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+            <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트&amp;핫딜</span></li>
+            <li onclick="location.href='mypage_mycar.html'"><i class="i-user2"></i> <span>마이페이지</span></li>
+            <li class="view-menu"><i class="i-menu"></i></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <section class="main-ctn">
+            <article class="main-img owl-carousel owl-theme owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(-1106px, 0px, 0px); transition: all 0s ease 0s; width: 2765px;">
+                        <div class="owl-item cloned" style="width: 553px;">
+                            <div class="item notice-order">
+                                <h4><span>가격비교 전문 컨설팅</span><strong>스마트다이렉트카</strong></h4>
+                                <a href="quotation_step1.html" class="btn active">맞춤 견적내기 <i class="i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 553px;">
+                            <div class="item notice-order">
+                                <h4><span>가격비교 전문 컨설팅</span><strong>스마트다이렉트카</strong></h4>
+                                <a href="quotation_step1.html" class="btn active">맞춤 견적내기 <i class="i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 553px;">
+                            <div class="item notice-order">
+                                <h4><span>가격비교 전문 컨설팅</span><strong>스마트다이렉트카</strong></h4>
+                                <a href="quotation_step1.html" class="btn active">맞춤 견적내기 <i class="i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 553px;">
+                            <div class="item notice-order">
+                                <h4><span>가격비교 전문 컨설팅</span><strong>스마트다이렉트카</strong></h4>
+                                <a href="quotation_step1.html" class="btn active">맞춤 견적내기 <i class="i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 553px;">
+                            <div class="item notice-order">
+                                <h4><span>가격비교 전문 컨설팅</span><strong>스마트다이렉트카</strong></h4>
+                                <a href="quotation_step1.html" class="btn active">맞춤 견적내기 <i class="i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+                <div class="owl-dots disabled"></div>
+            </article>
+            <article class="hotdeal-event">
+                <ul class="hot-event owl-carousel owl-theme owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="transform: translate3d(-1659px, 0px, 0px); transition: all 0.25s ease 0s; width: 3871px;">
+                            <div class="owl-item cloned" style="width: 553px;">
+                                <li onclick="movetoHotdealview(6);">
+                                    <div class="deal-info"> <span>[장기렌트]무보증 8월 한정 특가!</span> <strong>2020년형 쏘렌토</strong> <em>월<span>43</span>만원</em> <em>2019-08-04 ~ 2019-10-31</em> </div> <img src="http://localhost:8080//files//app/events/79134701b3fb445d8c34328ae8e05664_main_01.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item cloned" style="width: 553px;">
+                                <li onclick="movetoHotdealview(4);">
+                                    <div class="deal-info"> <span>이벤트 타이틀 test 11</span> <strong>이벤트 설명 test 22</strong> <em>월<span>44</span>만원</em> <em>2019-05-31 ~ 2019-07-16</em> </div> <img src="http://localhost:8080//files//app/events/5d0d96867d794883bcd94f41cd09fb5c_thumb-10927.large_320x320.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item" style="width: 553px;">
+                                <li onclick="movetoHotdealview(7);">
+                                    <div class="deal-info"> <span>[장기렌트] 8월 무보증 핫딜!</span> <strong>[장기렌트] 8월 무보증 핫딜 설명</strong> <em>월<span>44</span>만원</em> <em>2019-08-01 ~ 2020-01-01</em> </div> <img src="http://localhost:8080//files//app/events/efbb63b9ee5449329805c2bbbda6d505_list.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item active" style="width: 553px;">
+                                <li onclick="movetoHotdealview(6);">
+                                    <div class="deal-info"> <span>[장기렌트]무보증 8월 한정 특가!</span> <strong>2020년형 쏘렌토</strong> <em>월<span>43</span>만원</em> <em>2019-08-04 ~ 2019-10-31</em> </div> <img src="http://localhost:8080//files//app/events/79134701b3fb445d8c34328ae8e05664_main_01.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item" style="width: 553px;">
+                                <li onclick="movetoHotdealview(4);">
+                                    <div class="deal-info"> <span>이벤트 타이틀 test 11</span> <strong>이벤트 설명 test 22</strong> <em>월<span>44</span>만원</em> <em>2019-05-31 ~ 2019-07-16</em> </div> <img src="http://localhost:8080//files//app/events/5d0d96867d794883bcd94f41cd09fb5c_thumb-10927.large_320x320.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item cloned" style="width: 553px;">
+                                <li onclick="movetoHotdealview(7);">
+                                    <div class="deal-info"> <span>[장기렌트] 8월 무보증 핫딜!</span> <strong>[장기렌트] 8월 무보증 핫딜 설명</strong> <em>월<span>44</span>만원</em> <em>2019-08-01 ~ 2020-01-01</em> </div> <img src="http://localhost:8080//files//app/events/efbb63b9ee5449329805c2bbbda6d505_list.jpg">
+                                </li>
+                            </div>
+                            <div class="owl-item cloned" style="width: 553px;">
+                                <li onclick="movetoHotdealview(6);">
+                                    <div class="deal-info"> <span>[장기렌트]무보증 8월 한정 특가!</span> <strong>2020년형 쏘렌토</strong> <em>월<span>43</span>만원</em> <em>2019-08-04 ~ 2019-10-31</em> </div> <img src="http://localhost:8080//files//app/events/79134701b3fb445d8c34328ae8e05664_main_01.jpg">
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+                    <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div>
+                </ul>
+            </article>
+            <article class="review-list">
+                <h4>출고후기</h4>
+                <ul id="review-list">
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0124.jpg"></div>
+                            <div class="review-info"> <strong>제네시스 G80 오토리스 출고</strong> <span>2018-08-23:405</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0123.jpg"></div>
+                            <div class="review-info"> <strong>BMW 530i 자동차리스 출고</strong> <span>2018-08-23:268</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0122.jpg"></div>
+                            <div class="review-info"> <strong>인피니티 Q70 장기렌트 출고 </strong> <span>2018-08-23:176</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0121.jpg"></div>
+                            <div class="review-info"> <strong>미니 자동차리스 출고</strong> <span>2018-08-09:394</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/011.JPG"></div>
+                            <div class="review-info"> <strong>그랜져ig 장기렌트카</strong> <span>2018-08-09:390</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0120.jpg"></div>
+                            <div class="review-info"> <strong>BMW 520d 장기렌트카</strong> <span>2018-08-09:360</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0119.jpg"></div>
+                            <div class="review-info"> <strong>제네시스 G80 장기렌트 출고</strong> <span>2018-08-09:387</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/01.JPG"></div>
+                            <div class="review-info"> <strong>싼타페TM 장기렌트카 출고</strong> <span>2018-08-09:322</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0118.jpg"></div>
+                            <div class="review-info"> <strong>벤츠 GLE 350d 쿠페 오토리스 출고</strong> <span>2018-08-09:580</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0117.jpg"></div>
+                            <div class="review-info"> <strong>스포티지 장기렌트 출고~</strong> <span>2018-08-09:211</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0116.jpg"></div>
+                            <div class="review-info"> <strong>K5 장기렌트 출고</strong> <span>2018-08-09:89</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0115.jpg"></div>
+                            <div class="review-info"> <strong>BMW m2 오토리스 출고</strong> <span>2018-08-09:79</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0114.jpg"></div>
+                            <div class="review-info"> <strong>그랜져 ig 장기렌트카 출고</strong> <span>2018-08-09:98</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0113.jpg"></div>
+                            <div class="review-info"> <strong>K7 자동차리스 출고</strong> <span>2018-08-09:37</span> </div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div class="review-img"><img src="http://www.smartdirectcar.com/files/gallery/0112.jpg"></div>
+                            <div class="review-info"> <strong>E300 익스클루시브 리스 출고</strong> <span>2018-08-09:50</span> </div>
+                        </a></li>
+                </ul>
+                <div class="btn-area">
+                    <a href="#" id="getmore-review-list" class="btn">더 보기</a>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <div class="copylight">SMARDIRECTCAR © ALL RIGHTS RESERVED.</div>
+        </footer>
+    </div>
+    <div class="pop-hotdeal">
+        <div class="btns">
+            <div class="btn-close close-hotdeal"><i class="i-x"></i></div>
+            <a href="#form-est" class="go-form"><i class="i-edit-3"></i><span>문의하기</span></a>
+        </div>
+        <div class="popup-wrap">
+            <div class="popup-ctn">
+                <div class="hotdeal-img"><img src="http://www.smartdirectcar.com/files/hot/2db75a4c53464acfaa535f3d2156cacf_k72.jpg" class="car_img" alt="car_img"></div>
+                <div class="hotdeal-stt">
+                </div>
+            </div>
+            <div class="simple-estimate" id="form-est">
+                <form id="smart-form-hotdeal" class="form-inline smart-form-validator simple-estimate-form" novalidate="novalidate">
+                    <input type="hidden" name="path" value="">
+                    <input type="hidden" name="site" value="SMARTDIRECTAPP">
+                    <input type="hidden" name="mobile" value="Y">
+                    <input type="hidden" name="carName" value="">
+                    <input type="hidden" name="brandType" value="HOTDEAL">
+                    <input type="hidden" name="contentType" value="HOTDEAL">
+                    <h3><span>HOTDEAL</span><strong>견적문의</strong></h3>
+                    <div class="form-input name">
+                        <input type="text" id="customerName" name="customerName" placeholder="이름">
+                    </div>
+                    <div class="form-input tel">
+                        <input type="tel" id="customerPhone" name="customerPhone" placeholder="전화번호" maxlength="13">
+                    </div>
+                    <div class="form-input car-type">
+                        <input type="text" id="customerText" name="customerText" placeholder="상담 요청 내용">
+                    </div>
+                    <div class="form-input">
+                        <button type="button" id="requestConsultation"><i class="i-clipboard"></i> 견적문의</button>
+                    </div>
+                    <div class="form-input checkbox" style="padding-top: 12px;">
+                        <input type="checkbox" id="check_agree" checked="checked">
+                        <label for="check_agree">개인 정보 수집/이용 동의</label>
+                        <a href="javascript:void(0);" class="show-policy">[ 상세 보기 ]</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="resources/js/owl.carousel.min.js"></script>
+    <script>
+    var startGallertIdx = -15;
+    var viewGalleryCnt = 15;
+    var hotdealData = [];
+
+    $(document).ready(function() {
+
+        bindEvent();
+
+        selectEventHotDeal();
+
+        selectGallery();
+    });
+
+    function bindEvent() {
+        $(window).scroll(function() {
+            var fixhead = $('.fixed-head'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= 250) {
+                fixhead.addClass('on');
+            } else {
+                fixhead.removeClass('on');
+            }
+        });
+
+
+
+        $(".hbtn.menu").on('click', function() {
+            $('#sidemenu').addClass('on');
+            $(body).style('overflow', 'hidden');
+        });
+
+        $(".model-list dt").on('click', function() {
+            $(".model-list dt").removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $(".box-tt").on('click', function() {
+            $(this).toggleClass('on');
+        });
+    }
+
+
+    function selectEventHotDeal() {
+        $.ajax({
+            url: APP.getTargetUrl() + '/app/event/eventsHotdeal',
+            data: {},
+            cache: false,
+            type: "get",
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                renderEventHotDeal(data);
+            },
+            error: function(xhr, status, error) {}
+        });
+    }
+
+
+    function renderEventHotDeal(data) {
+
+        hotdealData = data;
+
+        var html = [];
+        var selectedCarClassName = "";
+        var selectedCarName = "";
+        var selectedCarId = "";
+
+        $(data).each(function(idx, item) {
+
+            var filePath = APP.getTargetUrl() + '/files/' + item.filePath + '/' + item.changeFileName;
+
+            /*
+                <li>
+                    <div class="deal-info">
+                        <span>[장기렌트]무보증 7월 한정 특가!</span>
+                        <strong>2020년형 쏘렌토</strong>
+                        
+                    </div>
+                    <img src="http://www.smartdirectcar.com/files/hot/d961206c5f224109b1a20feb83acea21_20sorentoList.jpg">
+                </li>
+            */
+
+            html.push('<li onclick="movetoHotdealview(' + item.eventIdx + ');">');
+            html.push('    <div class="deal-info">');
+            html.push('        <span>' + item.eventTitle + '</span>');
+            html.push('        <strong>' + item.eventDesc + '</strong>');
+            html.push('        <em>월<span>' + item.eventPrice + '</span>만원</em>');
+            html.push('        <em>' + item.eventStartDate + ' ~ ' + item.eventEndDate + '</em>');
+            html.push('    </div>');
+            html.push('    <img src="' + filePath + '">');
+            html.push('</li>');
+
+        });
+
+        $('.hot-event').html(html.join(''));
+
+        var owl = $('.owl-carousel.main-img');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            lazyLoad: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true
+        });
+        var owl = $('.owl-carousel.hot-event');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            lazyLoad: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true
+        });
+
+    }
+
+    function movetoHotdealview(eventIdx) {
+        document.location.href = 'hotdeal.html?event_idx=' + eventIdx;
+    }
+
+    function selectGallery() {
+
+        getStartGalleryIdx();
+
+        $.ajax({
+            url: APP.getTargetUrl() + '/app/board/galleryBoard',
+            data: {
+                startNum: startGallertIdx,
+                viewCnt: viewGalleryCnt
+            },
+            cache: false,
+            type: "get",
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                drawGallery(data);
+            },
+            error: function(xhr, status, error) {}
+        });
+        //
+    }
+
+    function getStartGalleryIdx() {
+        startGallertIdx = startGallertIdx + viewGalleryCnt;
+        console.log(startGallertIdx);
+    }
+
+    function drawGallery(data) {
+        var html = [];
+        var errorImagePath = "/homeresources/img/no-image.jpg";
+
+        $(data).each(function(idx, item) {
+
+
+            var boardIdx = item.boardIdx;
+            var title = item.title;
+            var filePath = item.filePath;
+            var changeFileName = item.changeFileName;
+            var regDate = item.regDate;
+            var hit = item.hitCnt;
+            var imagePath = "http://www.smartdirectcar.com/files" + filePath + '/' + changeFileName;
+
+            html.push('<li>');
+            html.push('    <a href="#">');
+            html.push('        <div class="review-img"><img src="' + imagePath + '"></div>');
+            html.push('        <div class="review-info">');
+            html.push('            <strong>' + title + '</strong>');
+            html.push('            <span>' + regDate + ':' + hit + '</span>');
+            html.push('        </div>');
+            html.push('    </a>');
+            html.push('</li>');
+        });
+
+        $('#review-list').append(html.join(''));
+
+    }
+    </script>
+</body>
+
+</html>

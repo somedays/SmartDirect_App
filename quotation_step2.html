@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스마트다이렉트카</title>
+<meta charset="utf-8">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<!-- Script -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1><a href="main.html"><img src="resources/img/smart-logo.svg"></a></h1>
+    <div class="header-btns left">
+        <a href="quotation_step1.html" class="hbtn"><i class="i-chevron-left"></i></a>
+    </div>
+    <div class="header-btns right">
+        <a href="#" class="hbtn menu" onclick="$('#sidemenu').addClass('on')"><i class="i-menu"></i></a>
+    </div>
+</header>
+<div id="sidemenu">
+    <div class="side-header">
+        <div class="login-info before"><a href="" class="active">로그인</a><a href="">회원가입</a></div>
+        <div class="login-info after on"><span>김길동님</span><a href="#">로그아웃</a></div>
+        <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+    </div>
+    <ul>
+        <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+        <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+        <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 & 핫딜</span></li>
+        <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+        <li><i class="i-message-circle"></i> <span>Q&A</span></li>
+        <h3><span>마이페이지</span></h3>
+        <li><i class="i-archive1"></i> <span>나의 견적함</span></li>
+        <li><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="location">
+        <h2 class="location-tt"><i class="i-clipboard1"></i> 차량 견적</h2>
+        <ol class="quotation-step">
+            <li><span>1</span> <strong>브랜드 선택</strong></li>
+            <li class="active"><span>2</span> <strong>차량 선택</strong></li>
+            <li><span>3</span> <strong>모델/옵션</strong></li>
+            <li><span>4</span> <strong>정보 입력</strong></li>
+        </ol>
+    </div>
+    <section class="car-list">
+        <h3 class="select-brand"></h3>
+        <ul>
+            <li>
+                <a href="quotation_step3.html">
+                    <div class="car-img"><img src="http://autoimg.danawa.com/photo/3699/model_200.png"></div>
+                    <div class="car-info">
+                        <div class="name">기아 셀토스</div>
+                        <div class="price"><span class="num">1,930 ~ 2,640</span>만원</div>
+                        <div class="etc">
+                            <span>2019.07 출시</span>
+                            <span>소형SUV</span>
+                            <span>가솔린, 디젤</span>
+                            <span>1,582~1,591cc</span>
+                            <span>복합연비 ㎞/ℓ</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="quotation_step3.html">
+                    <div class="car-img"><img src="http://autoimg.danawa.com/photo/3699/model_200.png"></div>
+                    <div class="car-info">
+                        <div class="name">기아 셀토스</div>
+                        <div class="price"><span class="num">1,930 ~ 2,640</span>만원</div>
+                        <div class="etc">
+                            <span>2019.07 출시</span>
+                            <span>소형SUV</span>
+                            <span>가솔린, 디젤</span>
+                            <span>1,582~1,591cc</span>
+                            <span>복합연비 ㎞/ℓ</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="quotation_step3.html">
+                    <div class="car-img"><img src="http://autoimg.danawa.com/photo/3699/model_200.png"></div>
+                    <div class="car-info">
+                        <div class="name">기아 셀토스</div>
+                        <div class="price"><span class="num">1,930 ~ 2,640</span>만원</div>
+                        <div class="etc">
+                            <span>2019.07 출시</span>
+                            <span>소형SUV</span>
+                            <span>가솔린, 디젤</span>
+                            <span>1,582~1,591cc</span>
+                            <span>복합연비 ㎞/ℓ</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>
+</body>
+</html>

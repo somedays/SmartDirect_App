@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스마트다이렉트카</title>
+<meta charset="utf-8">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<!-- Script -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1><a href="main.html"><img src="resources/img/smart-logo.svg"></a></h1>
+    <div class="header-btns left">
+        <a href="quotation_step2.html" class="hbtn"><i class="i-chevron-left"></i></a>
+    </div>
+    <div class="header-btns right">
+        <a href="#" class="hbtn menu"><i class="i-menu"></i></a>
+    </div>
+</header>
+<div id="sidemenu">
+    <div class="side-header">
+        <div class="login-info before"><a href="" class="active">로그인</a><a href="">회원가입</a></div>
+        <div class="login-info after on"><span>김길동님</span><a href="#">로그아웃</a></div>
+        <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+    </div>
+    <ul>
+        <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+        <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+        <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 & 핫딜</span></li>
+        <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+        <li><i class="i-message-circle"></i> <span>Q&A</span></li>
+        <h3><span>마이페이지</span></h3>
+        <li><i class="i-archive1"></i> <span>나의 견적함</span></li>
+        <li><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="location">
+        <h2 class="location-tt"><i class="i-clipboard1"></i> 차량 견적</h2>
+        <ol class="quotation-step">
+            <li><span>1</span> <strong>브랜드 선택</strong></li>
+            <li><span>2</span> <strong>차량 선택</strong></li>
+            <li class="active"><span>3</span> <strong>모델/옵션</strong></li>
+            <li><span>4</span> <strong>정보 입력</strong></li>
+        </ol>
+        <div class="step-desc">모델 / 옵션 등 세부조건 선택 시 정확한 월 이용료 확인은 다음단계를 진행해 주세요.</div>
+    </div>
+    <section class="model-option">
+        <!-- 상단 고정 차량 정보 -->
+        <article class="fixed-head">
+            <div class="car-img"><img src="http://autoimg.danawa.com/photo/3699/model_200.png"></div>
+            <div class="car-info">
+                <div class="name">그랜저 IG 가솔린 2.4 Modern (A/T)</div>
+                <div class="month-price">
+                    <div><strong>렌탈</strong><span class="price">376,400</span>원</div>
+                    <div><strong>리스</strong><span class="price">376,400</span>원</div>
+                </div>
+            </div>
+            <div class="txt">(선수금30%, 이용기간 48개월, 연간2.5만km 기준)</div>
+        </article>
+        <!-- 상단 차량 정보 -->
+        <article class="car-box title">
+            <div class="car-img"><img src="http://autoimg.danawa.com/photo/3375/43649/lineup_360.png"></div>
+            <div class="car-info">
+                <h3>G80 <span>2019년</span></h3>
+                <div class="lineup">가솔린 3.3 AWD</div>
+                <div class="trim">력서리 (A/T)</div>
+                <div class="etc">
+                    <span>2019.07 출시</span>
+                    <span>소형SUV</span>
+                    <span>가솔린, 디젤</span>
+                    <span>1,582~1,591cc</span>
+                    <span>복합연비 ㎞/ℓ</span>
+                </div>
+                <div class="price-info">
+                    <div class="month-price">렌트<span class="price">323,000</span>원</div>
+                    <div class="month-price">리스<span class="price">323,000</span>원</div>
+                    <div class="car-price">차량가격 <span class="price">39,203,000</span>원</div>
+                </div>
+            </div>
+        </article>
+        <!-- 트림 선택 -->
+        <article class="car-box model">
+            <h3>모델 선택</h3>
+            <div class="model-list">
+                <dl>
+                    <dt class="on"><i class="i-chevron-down"></i>2019년형 가솔린 3.3 RM</dt>
+                    <dd>
+                        <div class="trim-list">
+                            <ul class="trim-item">
+                                <li>
+                                    <input type="radio" id="car1" name="car-group" checked hidden>
+                                    <label for="car1">
+                                        <div class="trim-tt">기본형 (A/T)</div>
+                                        <div class="trim-price low">렌트<span class="price">323,000</span>원</div>
+                                        <div class="trim-price best">리스<span class="price">323,000</span>원</div>
+                                        <div class="trim-price car-price">차량가격<span class="price">39,203,000</span>원</div>
+                                        <a href="javascirpt:void(0);" class="more-info"><i class="i-info"></i></a>
+                                        <div class="etc">
+                                            <span>2019.07 출시</span>
+                                            <span>소형SUV</span>
+                                            <span>가솔린, 디젤</span>
+                                            <span>1,582~1,591cc</span>
+                                            <span>복합연비 ㎞/ℓ</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="car2" name="car-group" hidden>
+                                    <label for="car2">
+                                        <div class="trim-tt">럭셔리 (A/T)</div>
+                                        <div class="trim-price">렌트<span class="price">323,000</span>원</div>
+                                        <div class="trim-price">리스<span class="price">323,000</span>원</div>
+                                        <div class="trim-price car-price">차량가격<span class="price">39,203,000</span>원</div>
+                                        <a href="javascirpt:void(0);" class="more-info"><i class="i-info"></i></a>
+                                        <div class="etc">
+                                            <span>2019.07 출시</span>
+                                            <span>소형SUV</span>
+                                            <span>가솔린, 디젤</span>
+                                            <span>1,582~1,591cc</span>
+                                            <span>복합연비 ㎞/ℓ</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </dd>
+                    <dt><i class="i-chevron-down"></i>2019년형 가솔린 3.5 RM</dt>
+                    <dd>
+                        <div class="trim-list">
+                            <ul class="trim-item">
+                                <li>
+                                    <input type="radio" id="car3" name="car-group" hidden>
+                                    <label for="car3">
+                                        <div class="trim-tt">기본형 (A/T)</div>
+                                        <div class="trim-month-price"><div class="lent-price"></div><div class="lease-price"></div></div>
+                                        <div class="trim-price low">렌트<span class="price">39,203,000</span>원</div>
+                                        <div class="trim-price">리스<span class="price">39,203,000</span>원</div>
+                                        <div class="trim-price"><span class="price">39,203,000</span>원</div>
+                                        <a href="javascirpt:void(0);" class="more-info"><i class="i-info"></i></a>
+                                        <div class="etc">
+                                            <span>2019.07 출시</span>
+                                            <span>소형SUV</span>
+                                            <span>가솔린, 디젤</span>
+                                            <span>1,582~1,591cc</span>
+                                            <span>복합연비 ㎞/ℓ</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="car4" name="car-group" hidden>
+                                    <label for="car4">
+                                        <div class="trim-tt">럭셔리 (A/T)</div>
+                                        <div class="trim-price">렌트<span class="price">323,000</span>원</div>
+                                        <div class="trim-price best">리스<span class="price">323,000</span>원</div>
+                                        <div class="trim-price car-price">차량가격<span class="price">39,203,000</span>원</div>
+                                        <a href="javascirpt:void(0);" class="more-info"><i class="i-info"></i></a>
+                                        <div class="etc">
+                                            <span>2019.07 출시</span>
+                                            <span>소형SUV</span>
+                                            <span>가솔린, 디젤</span>
+                                            <span>1,582~1,591cc</span>
+                                            <span>복합연비 ㎞/ℓ</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </dd>
+                </ul>
+            </div>
+        </article>
+        <!-- 옵션 선택 -->
+        <article class="car-box option">
+            <div class="box-tt">
+                <h4>옵션 추가하기</h4>
+                <span>선택안함</span>
+            </div>
+            <ul>
+                <li>
+                    <input type="checkbox" id="option1" name="option-group" hidden>
+                    <label for="option1">
+                        <i class="i-check"></i>
+                        <div class="option-tt">파노라마 선루프</div>
+                        <div class="option-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="option2" name="option-group" hidden>
+                    <label for="option2">
+                        <i class="i-check"></i>
+                        <div class="option-tt">파노라마 선루프</div>
+                        <div class="option-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+            </ul>
+        </article>
+        <!-- 색상 선택 -->
+        <article class="car-box color">
+            <div class="box-tt">
+                <h4>색상 선택</h4>
+                <span>스노우 화이트 펄</span>
+            </div>
+            <ul>
+                <li>
+                    <input type="radio" id="color1" name="color-group" checked hidden>
+                    <label for="color1">
+                        <div class="color-box"><span style="background-color:#fafafa"></span></div>
+                        <div class="color-tt">스노우 화이트 펄</div>
+                        <div class="color-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="color2" name="color-group" hidden>
+                    <label for="color2">
+                        <div class="color-box"><span style="background-color:#121212"></span></div>
+                        <div class="color-tt">오로라 블랙 펄</div>
+                        <div class="color-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="color3" name="color-group" hidden>
+                    <label for="color3">
+                        <div class="color-box"><span style="background-color:#175a81"></span></div>
+                        <div class="color-tt">스노우 화이트 펄</div>
+                        <div class="color-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="color4" name="color-group" hidden>
+                    <label for="color4">
+                        <div class="color-box"><span style="background-color:#6a8117"></span></div>
+                        <div class="color-tt">오로라 블랙 펄</div>
+                        <div class="color-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="color5" name="color-group" hidden>
+                    <label for="color5">
+                        <div class="color-box"><span style="background-color:#fff"></span></div>
+                        <div class="color-tt">스노우 화이트 펄</div>
+                        <div class="color-price"><span class="price">1,180,000</span>원</div>
+                    </label>
+                </li>
+            </ul>
+        </article>
+        <!-- 선수율/선납금 선택 -->
+        <article class="car-box beprice">
+            <div class="box-tt">
+                <h4>선수율/선납금</h4>
+                <span>선납금 30%</span>
+            </div>
+            <ul>
+                <li>
+                    <input type="radio" id="beprice1" name="beprice-group" checked hidden>
+                    <label for="beprice1">
+                        <i class="i-check"></i>
+                        <div class="beprice-tt">선납금 30%</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="beprice3" name="beprice-group" hidden>
+                    <label for="beprice3">
+                        <i class="i-check"></i>
+                        <div class="beprice-tt">보증금 30%</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="beprice2" name="beprice-group" hidden>
+                    <label for="beprice2">
+                        <i class="i-check"></i>
+                        <div class="beprice-tt">무보증</div>
+                    </label>
+                </li>
+            </ul>
+        </article>
+        <!-- 이용기간 -->
+        <article class="car-box period">
+                <div class="box-tt">
+                    <h4>이용기간</h4>
+                    <span>48개월</span>
+                </div>
+                <ul>
+                    <li>
+                        <input type="radio" id="period1" name="period-group" hidden>
+                        <label for="period1">
+                            <i class="i-check"></i>
+                            <div class="period-tt">36 개월</div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" id="period2" name="period-group" checked hidden>
+                        <label for="period2">
+                            <i class="i-check"></i>
+                            <div class="period-tt">48 개월</div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" id="period3" name="period-group" hidden>
+                        <label for="period3">
+                            <i class="i-check"></i>
+                            <div class="period-tt">60 개월</div>
+                        </label>
+                    </li>
+                </ul>
+            </article>
+        <article class="car-box km">
+            <div class="box-tt">
+                <h4>주행거리</h4>
+                <span>20,000km</span>
+            </div>
+            <ul>
+                <li>
+                    <input type="radio" id="km1" name="km-group" checked hidden>
+                    <label for="km1">
+                        <i class="i-check"></i>
+                        <div class="km-tt">20,000km</div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="km2" name="km-group" checked hidden>
+                    <label for="km2">
+                        <i class="i-check"></i>
+                        <div class="km-tt">30,000km</div>
+                    </label>
+                </li>
+            </ul>
+        </article>
+        <article class="car-box btn-area">
+            <a href="quotation_step4.html" class="btn active">다 음</a>
+        </article>
+    </section>
+</div>
+<script>
+$(window).scroll(function(){
+    var fixhead = $('.fixed-head'),
+        scroll = $(window).scrollTop();
+  
+    if (scroll >= 350) { 
+      fixhead.addClass('on');
+    }
+    else {
+      fixhead.removeClass('on');
+    }
+  });
+
+$(".hbtn.menu").on('click',function(){
+    $('#sidemenu').addClass('on');
+    $(body).style('overflow','hidden');
+});
+
+$(".model-list dt").on('click',function(){
+    $(this).toggleClass('on');
+});
+
+$(".box-tt").on('click',function(){
+    $(this).toggleClass('on');
+});
+
+$(".more-info").on('click',function(){
+    $(this).toggleClass('on');
+    $(this).children('.i-info').toggleClass('i-x')
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스마트다이렉트카</title>
+<meta charset="utf-8">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="resources/css/owl.theme.default.css">
+<!-- Script -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1><a href="main.html"><img src="resources/img/smart-logo.svg"></a></h1>
+    <div class="header-btns right">
+        <a href="#" class="hbtn menu"><i class="i-menu"></i></a>
+    </div>
+</header>
+<div id="sidemenu">
+    <div class="side-header">
+        <div class="login-info before"><a href="" class="active">로그인</a><a href="">회원가입</a></div>
+        <div class="login-info after on"><span>김길동님</span><a href="#">로그아웃</a></div>
+        <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+    </div>
+    <ul>
+        <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+        <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+        <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 & 핫딜</span></li>
+        <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+        <li><i class="i-message-circle"></i> <span>Q&A</span></li>
+        <h3><span>마이페이지</span></h3>
+        <li><i class="i-archive1"></i> <span>나의 견적함</span></li>
+        <li><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="location">
+        <h2 class="location-tt"><i class="i-gift"></i> EVENT & HOT DEAL</h2>
+    </div>
+    <section class="main-ctn">
+        <article class="hotdeal-event">
+            <ul class="hot-event list">
+                <li id="hotdeal-1">
+                    <div class="deal-info">
+                        <span>[장기렌트]무보증 7월 한정 특가!</span>
+                        <strong>2020년형 쏘렌토</strong>
+                        <em>월<span>48</span>만원</em>
+                    </div>
+                    <img src="http://www.smartdirectcar.com/files/hot/d961206c5f224109b1a20feb83acea21_20sorentoList.jpg">
+                </li>
+                <li>
+                    <div class="deal-info">
+                        <span>[장기렌트] 7월 무보증 핫딜!</span>
+                        <strong>싼타페TM</strong>
+                        <em>월<span>46</span>만원</em>
+                    </div>
+                    <img src="http://www.smartdirectcar.com/files/hot/list.jpg">
+                </li>
+                <li>
+                    <div class="deal-info">
+                        <span>[장기렌트]무보증 48개월 핫딜!</span>
+                        <strong>SM6</strong>
+                        <em>월<span>41</span>만원</em>
+                    </div>
+                    <img src="http://www.smartdirectcar.com/files/hot/sm6List1.jpg">
+                </li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+        <div class="copylight">SMARDIRECTCAR © ALL RIGHTS RESERVED.</div>
+    </footer>
+</div>
+<div class="pop-hotdeal">
+	<div class="btns">
+        <div class="btn-close close-hotdeal"><i class="i-x"></i></div>
+        <a href="#form-est" class="go-form"><i class="i-edit-3"></i><span>문의하기</span></a>
+    </div>
+    <div class="popup-wrap">
+	    <div class="popup-ctn">
+	        <div class="hotdeal-img"><img src="http://www.smartdirectcar.com/files/hot/2db75a4c53464acfaa535f3d2156cacf_k72.jpg" class="car_img" alt="car_img"></div>
+	        <div class="hotdeal-stt">
+	            <h3>
+	                <span id="hotdeal_car_title">[장기렌트] K7 100대 한정 핫딜!</span>
+	                <strong id="hotdeal_car_name">K7</strong>
+	                <ul>
+	                    <li><i class="i-filter"></i><span>등급</span><strong id="hotdeal_car_grade">2.4 노블레스</strong></li>
+	                    <li><i class="i-sliders"></i><span>옵션</span><strong id="hotdeal_car_option">기본</strong></li>
+	                    <li><i class="i-tag1"></i><span>신차가</span><strong><span id="hotdeal_car_start_price">3329</span>~<span id="hotdeal_car_end_price">3506</span>만원</strong></li>
+	                    <li><i class="i-dollar-sign"></i><span>월</span><strong><span id="hotdeal_rent_start_price">52</span>만원~</strong></li>
+	                </ul>
+	            </h3>
+	            <div class="hotdeal-detail">
+	                <h4>Detail Shot</h4>
+	                <div class="modal-body" id="hot-contents">
+                        <p>K7 2.4 가솔린 노블레스 </p>
+                        <p>&nbsp;</p>
+                        <p> 신차가 3329만  48개월 연2만키로 기준 (변경가능)</p>
+                        <p>&nbsp;</p>
+                        <p>  ■ 판매형태 : 무보증 장기렌트 - 만26세 보험 </p>
+                        <p>  ■ 판매가격 :  무보증 월 52만원대 부터</p>
+                        <p>■ 옵션 : 선택가능<br></p>
+                        <p>  ■ 고객 사은행사 : 전면, 측후면 썬팅 및 2채널 블랙박스 </p>
+                        <p>  ■ 만기시 차량 반납/인수 선택 가능</p>
+                        <p>&nbsp;</p>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="simple-estimate" id="form-est">
+	        <form id="smart-form-hotdeal" class="smart-form-validator simple-estimate-form" novalidate="novalidate">
+	            <input type="hidden" name="path" value="http://smartdirectcar.com/">
+	            <input type="hidden" name="site" value="SMART">
+	            <input type="hidden" name="ipAdress" value="122.42.206.187">
+	            <input type="hidden" name="mobile" value="Y">				
+	            <input type="hidden" name="carName" value="K7">
+	            <input type="hidden" name="brandType" value="hotdeal">
+	            <input type="hidden" name="contentType" value="HOTDEAL">
+	            <h3><span>HOTDEAL</span><strong>견적문의</strong></h3>
+	            <div class="form-input name">
+	                <input type="text" id="customerName" name="customerName" placeholder="이름">
+	            </div>
+	            <div class="form-input tel">
+	                <input type="tel" id="customerPhone" name="customerPhone" placeholder="전화번호" maxlength="13">
+	            </div>
+	            <div class="form-input car-type">
+	                <input type="text" id="customerText" name="customerText" placeholder="상담 요청 내용">
+	            </div>
+	            <div class="form-input">
+	                <button type="button" id="requestConsultation"><i class="i-clipboard"></i> 견적문의</button>
+	            </div>
+	            <div class="form-input checkbox" style="padding-top: 12px;">
+	                <input type="checkbox" id="check_agree" checked="checked">
+	                <label for="check_agree">개인 정보 수집/이용 동의</label>
+	                <a href="javascript:void(0);" class="show-policy">[ 상세 보기 ]</a>
+	            </div>
+	        </form>
+	    </div>
+	</div>
+</div>
+
+<div class="popup pop-policy">
+    <div class="popup-wrap">
+        <div class="popup-tt">
+            <h2>개인정보 취급 방침</h2>
+            <a href="javascript:void(0)" class="popup-close close-policy"><i class="i-x"></i></a>
+        </div>
+        <div class="popup-ctn">
+            <div class="text-area">
+                <p>귀사가 취득한 개인정보는 『개인정보보호법』 및 『정보통신망이용촉진 및 정보보호에 관한 법률』 에 따라 개인정보의 수집/이용 및 타인에게 제공할 경우에는 본인의 사전 동의를 얻어야 하는 정보입니다. 이에 본인은 귀사가 본인의 개인정보를 아래와 같이 수집/이용하는 것에 대해 동의합니다.</p>
+                <ol>
+                    <li>
+                        <strong>1. 개인 정보의 수집 이용 목적</strong>
+                        <p>- 제품 및 서비스 안내 : 렌터카 계약전 상담</p>
+                    </li>
+                    <li>
+                        <strong>2. 수집하는 개인 정보의 항목 및 수집 밥법</strong>
+                        <p>- 수집하는 개인정보의 항목: 이 름, 연락처</p>
+                    </li>
+                </ol>            
+            </div>
+        </div>
+    </div> 
+</div>
+<script type="text/javascript" src="resources/js/owl.carousel.min.js"></script>
+<script>
+$(window).scroll(function(){
+    var fixhead = $('.fixed-head'),
+        scroll = $(window).scrollTop();
+  
+    if (scroll >= 250) { 
+      fixhead.addClass('on');
+    }
+    else {
+      fixhead.removeClass('on');
+    }
+});
+
+$(document).ready(function() {
+
+});
+
+$(".hbtn.menu").on('click',function(){
+    $('#sidemenu').addClass('on');
+    $(body).style('overflow','hidden');
+});
+
+$(".model-list dt").on('click',function(){
+    $(".model-list dt").removeClass('on');    
+    $(this).addClass('on');
+});
+
+$(".box-tt").on('click',function(){
+    $(this).toggleClass('on');
+});
+
+$("#hotdeal-1").on('click',function(){
+    $(".pop-hotdeal").addClass("on");
+    $('body').css("overflow","hidden");
+    $(".pop-hotdeal .popup-wrap").animate({scrollTop : 0}, 400);
+});	
+
+$(".close-hotdeal").on('click',function(){
+    $(".pop-hotdeal").removeClass("on");
+    $('body').css("overflow","auto");
+    $('.hotdeal-stt').animate({scrollTop : 0}, 400);
+});
+
+
+$(".show-policy").on('click',function(){
+    $(".pop-policy").addClass("on");
+    $('body').css("overflow","hidden");
+});
+
+$(".close-policy").on('click',function(){
+    $(".pop-policy").removeClass("on");
+    $('body').css("overflow","auto");
+});
+
+</script>
+</body>
+</html>

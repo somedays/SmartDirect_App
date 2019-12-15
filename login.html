@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스마트다이렉트카</title>
+<meta charset="utf-8">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<!-- Script -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1><a href="main.html"><img src="resources/img/smart-logo.svg"></a></h1>
+    <div class="header-btns right">
+        <a href="#" class="hbtn menu" onclick="$('#sidemenu').addClass('on')"><i class="i-menu"></i></a>
+    </div>
+</header>
+<div id="sidemenu">
+    <div class="side-header">
+        <div class="login-info before"><a href="" class="active">로그인</a><a href="">회원가입</a></div>
+        <div class="login-info after on"><span>김길동님</span><a href="#">로그아웃</a></div>
+        <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+    </div>
+    <ul>
+        <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+        <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+        <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 & 핫딜</span></li>
+        <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+        <li><i class="i-message-circle"></i> <span>Q&A</span></li>
+        <h3><span>마이페이지</span></h3>
+        <li><i class="i-archive1"></i> <span>나의 견적함</span></li>
+        <li><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="location">
+        <h2 class="location-tt">로그인</h2>
+    </div>
+    <section id="intro">
+        <div class="login-social">
+            <a href="javascirpt:location.href='main.html" class="login-kakao">카카오톡으로 로그인</a>
+            <a href="javascirpt:location.href='main.html" class="login-naver">네이버로 로그인</a>
+        </div>
+        <form class="login-box">
+            <input type="text" placeholder="아이디(이메일)">
+            <input type="password" placeholder="비밀번호">
+            <div class="login-option">
+                <input type="checkbox" id="saveId" checked>
+                <label for="saveId"><i class="i-square"></i> 아이디 저장</label>
+                <input type="checkbox" id="autoLogin" checked>
+                <label for="autoLogin"><i class="i-square"></i> 자동 로그인</label>
+            </div>
+            <a href="javascript:location.href='main.html'" class="btn active">로그인</a>
+        </form>
+        <article class="btn-box">
+            <a href="javascript:location.href='join_step1.html'" class="btn">간편 회원 가입</a>
+            <a href="javascript:location.href='id_pw_search.html'" class="btn-txt">아이디/비밀번호 찾기</a>
+            <a href="javascript:location.href='main.html'" class="btn-txt">비회원으로 사용하기</a>
+        </article>
+    </section>
+</div>
+</body>
+</html>

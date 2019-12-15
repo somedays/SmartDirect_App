@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>스마트다이렉트카</title>
+<meta charset="utf-8">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<!-- Script -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <h1><a href="main.html"><img src="resources/img/smart-logo.svg"></a></h1>
+    <div class="header-btns left">
+        <a href="main.html" class="hbtn"><i class="i-chevron-left"></i></a>
+    </div>
+    <div class="header-btns right">
+        <a href="#" class="hbtn menu" onclick="$('#sidemenu').addClass('on')"><i class="i-menu"></i></a>
+    </div>
+</header>
+<div id="sidemenu">
+    <div class="side-header">
+        <div class="login-info before"><a href="" class="active">로그인</a><a href="">회원가입</a></div>
+        <div class="login-info after on"><span>김길동님</span><a href="#">로그아웃</a></div>
+        <a href="#" class="close-sidemenu" onclick="$('#sidemenu').removeClass('on')"><i class="i-x"></i></a>
+    </div>
+    <ul>
+        <li onclick="location.href='main.html'"><i class="i-home1"></i> <span>홈</span></li>
+        <li onclick="location.href='quotation_step1.html'"><i class="i-clipboard1"></i> <span>견적내기</span></li>
+        <li onclick="location.href='hotdeal.html'"><i class="i-gift"></i> <span>이벤트 & 핫딜</span></li>
+        <li onclick="location.href='review.html'"><i class="i-pen-tool"></i> <span>출고후기</span></li>
+        <li><i class="i-message-circle"></i> <span>Q&A</span></li>
+        <h3><span>마이페이지</span></h3>
+        <li><i class="i-archive1"></i> <span>나의 견적함</span></li>
+        <li><i class="i-user-check"></i> <span>나의 차량정보</span></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="location">
+        <h2 class="location-tt"><i class="i-clipboard1"></i> 차량 견적</h2>
+        <ol class="quotation-step">
+            <li class="active"><span>1</span> <strong>브랜드 선택</strong></li>
+            <li><span>2</span> <strong>차량 선택</strong></li>
+            <li><span>3</span> <strong>모델/옵션</strong></li>
+            <li><span>4</span> <strong>정보 입력</strong></li>
+        </ol>
+    </div>
+    <section class="brand-list" onclick="location.href='quotation_step2.html'">
+        <ul>
+            <li><img src="resources/img/brands/303.png"> <span>현대</span></li>
+            <li><img src="resources/img/brands/307.png"> <span>기아</span></li>
+            <li><img src="resources/img/brands/312.png"> <span>쉐보레</span></li>
+            <li><img src="resources/img/brands/321.png"> <span>르노삼성</span></li>
+            <li><img src="resources/img/brands/326.png"> <span>쌍용</span></li>
+            <li><img src="resources/img/brands/349.png"> <span>벤츠</span></li>
+            <li><img src="resources/img/brands/358.png"> <span>스마트</span></li>
+            <li><img src="resources/img/brands/362.png"> <span>BMW</span></li>
+            <li><img src="resources/img/brands/367.png"> <span>미니</span></li>
+            <li><img src="resources/img/brands/371.png"> <span>아우디</span></li>
+            <li><img src="resources/img/brands/376.png"> <span>폭스바겐</span></li>
+            <li><img src="resources/img/brands/381.png"> <span>포르쉐</span></li>
+            <li><img src="resources/img/brands/385.png"> <span>롤스로이스</span></li>
+            <li><img src="resources/img/brands/390.png"> <span>벤틀리</span></li>
+            <li><img src="resources/img/brands/394.png"> <span>재규어</span></li>
+            <li><img src="resources/img/brands/399.png"> <span>랜드로버</span></li>
+            <li><img src="resources/img/brands/404.png"> <span>애스턴마틴</span></li>
+            <li><img src="resources/img/brands/408.png"> <span>로터스</span></li>
+            <li><img src="resources/img/brands/409.png"> <span>맥라렌</span></li>
+            <li><img src="resources/img/brands/413.png"> <span>푸조</span></li>
+            <li><img src="resources/img/brands/422.png"> <span>시트로엥</span></li>
+            <li><img src="resources/img/brands/427.png"> <span>피아트</span></li>
+            <li><img src="resources/img/brands/436.png"> <span>페라리</span></li>
+            <li><img src="resources/img/brands/440.png"> <span>람보르기니</span></li>
+            <li><img src="resources/img/brands/445.png"> <span>마세라티</span></li>
+            <li><img src="resources/img/brands/459.png"> <span>볼보</span></li>
+            <li><img src="resources/img/brands/486.png"> <span>렉서스</span></li>
+            <li><img src="resources/img/brands/491.png"> <span>토요타</span></li>
+            <li><img src="resources/img/brands/500.png"> <span>혼다</span></li>
+            <li><img src="resources/img/brands/509.png"> <span>인피니티</span></li>
+            <li><img src="resources/img/brands/514.png"> <span>닛산</span></li>
+            <li><img src="resources/img/brands/546.png"> <span>캐딜락</span></li>
+            <li><img src="resources/img/brands/569.png"> <span>포드</span></li>
+            <li><img src="resources/img/brands/573.png"> <span>링컨</span></li>
+            <li><img src="resources/img/brands/583.png"> <span>크라이슬러</span></li>
+            <li><img src="resources/img/brands/587.png"> <span>지프</span></li>
+            <li><img src="resources/img/brands/610.png"> <span>북기은상</span></li>
+            <li><img src="resources/img/brands/611.png"> <span>테슬라</span></li>
+        </ul>
+    </section>
+</div>
+</body>
+</html>
